@@ -1,0 +1,365 @@
+@media screen and (max-width: 1300px) {
+    .main-header .logo p {
+        color: #CC8E00;
+        font-size: 10px;
+        margin-left: 12px;
+        width: 300px;
+    }
+}
+
+
+/*Body*/
+
+.back {
+    top: 140px;
+    list-style-type: none;
+    position: absolute;
+    border-right: groove;
+    padding-right: 100px;
+    padding-bottom: 10px;
+    padding-left: 80px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.userAva {
+    margin-left: 40px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: solid gray 1px;
+    cursor: pointer;
+}
+
+.show {
+    display: none;
+    position: absolute;
+}
+
+.add {
+    display: flex;
+    padding: 7px 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5px;
+    width: 200px;
+    height: 20px;
+    border: solid white 1px;
+    background: white;
+    position: relative;
+    left: 15%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.add span {
+    padding: 5px 40px;
+    border-radius: 12px;
+}
+
+.add:before {
+    content: "";
+    width: 0;
+    height: 0;
+    left: 45%;
+    bottom: 100%;
+    position: absolute;
+    border-left: 7px solid transparent;
+    border-bottom: 14px solid white;
+    border-right: 7px solid transparent;
+}
+
+.add:after {
+    content: "";
+    width: 0;
+    height: 0;
+    left: 46%;
+    bottom: 100%;
+    position: absolute;
+    border-left: 5px solid transparent;
+    border-bottom: 10px solid white;
+    border-right: 5px solid transparent;
+}
+
+.add span:hover {
+    cursor: pointer;
+    background-color: #c6a729;
+    color: white;
+}
+
+.dropdown:hover .show {
+    display: block;
+}
+
+.option {
+    text-align: center;
+    display: block;
+    padding: 8px 20px;
+    border: groove;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.profile {
+    position: relative;
+    top: 35px;
+    margin-left: 450px;
+}
+
+.profile button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: green;
+    border-width: 1px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.account {
+    position: relative;
+    top: 35px;
+    display: none;
+    margin-left: 450px;
+}
+
+.account button {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: green;
+    border-width: 1px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#logOut {
+    background-color: red;
+    color: white;
+    text-decoration: none;
+}
+
+#log {
+    text-decoration: none;
+}
+
+.createAcc {
+    position: relative;
+    top: 35px;
+    display: none;
+    margin-left: 450px;
+    z-index: 2;
+}
+
+.createAcc button {
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: green;
+    border-width: 1px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.list {
+    position: relative;
+    top: 35px;
+    display: none;
+    margin-left: 450px;
+    z-index: 2;
+}
+
+
+/*.employee {
+    border: solid;
+    border-width: 1px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 80%;
+}*/
+
+#table,
+th,
+td {
+    text-align: center;
+}
+
+.del {
+    height: 10px;
+    width: 10px;
+    cursor: pointer;
+}
+
+.list form {
+    float: right;
+    margin-right: 10%;
+    margin-bottom: 20px;
+}
+
+.eye {
+    position: relative;
+    top: -24px;
+    right: 0;
+    margin-left: 57%;
+}
+
+.eye img {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 903px) {
+    .back {
+        padding-right: 30px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+    }
+    .userAva {
+        margin-left: 40px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        border: solid gray 1px;
+        cursor: pointer;
+    }
+    .profile {
+        top: 35px;
+        margin-left: 260px;
+    }
+    .account {
+        top: 35px;
+        display: none;
+        margin-left: 260px;
+    }
+    .createAcc {
+        top: 35px;
+        display: none;
+        margin-left: 260px;
+        z-index: 2;
+    }
+    .list {
+        top: 35px;
+        display: none;
+        margin-left: 260px;
+        z-index: 2;
+    }
+}
+
+
+/* .contact {
+        display: none;
+    }
+    .back {
+        position: relative;
+        left: 0;
+        right: 0;
+        padding-left: 5%;
+        padding-right: 13%;
+        border-right: white;
+    }
+    .userAva {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 200px;
+        width: 200px;
+    }
+    .dropdown:hover .show {
+        display: block;
+        bottom: -30px;
+        margin-left: 25%;
+    }
+    .navbar__menu {
+        height: 100px;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0%;
+        text-align: center;
+    }
+    .menu li {
+        line-height: 15px;
+        width: 100px;
+        padding-left: 13px;
+        text-align: center;
+    }
+    .menu img {
+        display: none;
+    }
+    .navbar__menu.active {
+        background-color: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        display: grid;
+        grid-template-columns: auto;
+        color: white;
+        top: 120px;
+        right: -50px;
+        opacity: 1;
+        z-index: 99;
+        width: 200px;
+        padding: 10px 50px 10px 10px;
+    }
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+    }
+    .menu li {
+        width: 100%;
+        padding-top: 10px;
+    }
+    .menu li:hover {
+        background-color: #c6a729;
+        color: black;
+    }
+    #mobile-menu {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .profile {
+        margin-left: 80px;
+    }
+    .account {
+        margin-left: 80px;
+    }
+    .createAcc {
+        margin-left: 80px;
+    }
+    .list {
+        margin-left: 80px;
+    }
+} */
+
+.footer {
+    text-align: center;
+    padding-top: 550px;
+    font-weight: bold;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Trang khai báo</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Internship-Dev5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../CSS/HomePage/khaibao.css" />
+    <link rel="stylesheet" href="../../CSS/HomePage/style.css" />
+    <link media="all" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body style="background: white;">
+    <div class="container" id="app">
+        <div class="overlay" id="nav-overlay">
+            <div class="wrap-header">
+                <div class="top-header">
+                    <div class="language">
+                        <a href="#"><img src="../../Images/HomePage/jp.jpg" alt="japanese"></a>
+                        <a href="#"><img src="../../Images/HomePage/vn.jpg" alt="vietnamese"></a>
+                    </div>
+                    <div class="contact">
+                        <div>
+                            <i class="fa fa-phone"></i> <a href="tel:02437556500">Hotline: +84-(0)24-3755-6500</a>
+                        </div>
+                        <div>
+                            <i class="fa fa-envelope-o"></i> <a href="mailto:admin@usol-v.com.vn">Email: admin@usol-v.com.vn</a>
+                        </div>
+                        <div>
+                            <i class="fa fa-facebook-square"></i> <a href="https://www.facebook.com/UsolVietnam/">Facebook: USOL Vietnam</a>
+                        </div>
+                        <div class="search">
+                            <i onclick="handleSearch()" class="fa fa-search"></i>
+                            <input id="search" class="txt-search" placeholder="Nhap tu tim kiem...">
+                        </div>
+                    </div>
+                </div>
+                <div class="main-header">
+                    <div class="logo">
+                        <a href="https://www.usol-v.com.vn/">
+                            <img src="../../Images/HomePage/logo.jpg" alt="logo">
+                            <p>CHALLENGE FOR CHANGE</p>
+                        </a>
+                    </div>
+                    <ul class="tabs-menu">
+                        <i class="fa fa-bars" onclick="displayNavMobie()" aria-hidden="true"></i>
+                        <li class="item active"><a href="#">Home</a></li>
+                        <li class="item">
+                            <a href="./user.html">Thông tin tài khoản</a>
+                        </li>
+                        <li class="item" style="background-color: red;">
+                            <a href="./khaibao.html">Khai báo</a>
+                        </li>
+                        <li class="item">
+                            <a href="./chithi.html">Chỉ thị</a>
+                        </li>
+                        <li id="anh">
+                            <a href="#">
+                                <img onclick="handleLogin()" src='../../Images/unnamed.jpg' alt="ảnh minh họa">
+                                <p id="handle-login">
+                                    <a href="../../index.html" style="color: red;">Logout</a>
+                                </p>
+                            </a>
+                        </li>
+                        <div class="nav__mobie" id="nav-bar-mobie">
+                            <a>
+                                <img onclick="handleLogin()" src='../../Images/unnamed.jpg' alt="ảnh minh họa">
+                                <p id="handle-login">Logout</p>
+                                <i onclick="clickNavMobie()" class="fa fa-window-close" aria-hidden="true"></i>
+                            </a>
+                            <hr>
+                            <ul class="nav__mobie-items">
+                                <li class="item-link"><a href="#">Home</a></li>
+                                <li class="item-link"><a href="#">Thông tin tài khoản</a></li>
+                                <li class="item-link"><a href="#">Khai báo</a></li>
+                                <li class="item-link"><a href="#">Chỉ thị</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-content">
+                <ul class="menu">
+                    <li class="items" onclick="list('create',this)">Create</li>
+                    <li class="items" onclick="list('update',this)">Update</li>
+                </ul>
+                <div class="ok" id="create">
+                    <form>
+                        <div class="form">
+                            <label id="a" for="fname">Mã Nhân viên:</label><br>
+                            <input type="number" id="fname" name="fname" pattern="[0-9]" required><br>
+                            <br><label id="a" for="PL">Phân loại:</label><br>
+                            <input type="text" id="PL" name="PL"><br>
+                            <br><label id="a" for="NDKB">Nội dung khai báo:</label><br>
+                            <textarea rows="9" cols="70" name="comment" form="usrform" required>Nhập ở đây...</textarea>
+                            <br><label id="a" for="DADTG">Dự án đang tham gia:</label><br>
+                            <input type="text" id="DADTG" name="DADTG" required><br>
+                            <br><label id="a" for="appt">Thời gian khai báo:</label><br>
+                            <input type="date" id="appt" name="appt" required><br>
+                            <br><input id="submit" type="submit" value="Xác nhận">
+                        </div>
+                    </form>
+                </div>
+                <div class="ok" id="update">
+                    <form action="http://google.com">
+                        <div class="form">
+                            <label id="a" for="fname">Mã Nhân viên:</label><br>
+                            <input type="number" v-model="fname" name="fname" pattern="[0-9]" required><br>
+                            <br><label id="a" for="PL">Phân loại:</label><br>
+                            <input type="text" v-model="PL" name="PL" required><br>
+                            <br><label id="a" for="NDKB">Nội dung khai báo:</label><br>
+                            <textarea v-model="NDKB" rows="9" cols="70" name="comment" form="usrform" required>Nhập ở đây...</textarea>
+                            <br><label id="a" for="DADTG">Dự án đang tham gia:</label><br>
+                            <input type="text" v-model="DADTG" name="DADTG" required><br>
+                            <br><label id="a" for="appt">Thời gian khai báo:</label><br>
+                            <input type="date" v-model="appt" name="appt" required><br>
+                            <br><input id="submit" type="submit" value="Update">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../Scripts/khaibao.js"></script>
+    <script src="../../Scripts/scriptCommon.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Header & Footer</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Internship-Dev5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/HomePage/style.css" />
+    <link media="all" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="overlay"></div>
+    <div class="container" id="app">
+        <div class="wrap-header">
+            <div class="top-header">
+                <div class="language">
+                    <a href="#"><img src="./Images/HomePage/jp.jpg" alt="japanese"></a>
+                    <a href="#"><img src="./Images/HomePage/vn.jpg" alt="vietnamese"></a>
+                </div>
+                <div class="contact">
+                    <div>
+                        <i class="fa fa-phone"></i> <a href="tel:02437556500">Hotline: +84-(0)24-3755-6500</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-envelope-o"></i> <a href="mailto:admin@usol-v.com.vn">Email: admin@usol-v.com.vn</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-facebook-square"></i> <a href="https://www.facebook.com/UsolVietnam/">Facebook: USOL Vietnam</a>
+                    </div>
+                    <div class="search">
+                        <i onclick="handleSearch()" class="fa fa-search"></i>
+                        <input id="search" class="txt-search" placeholder="Nhap tu tim kiem...">
+                    </div>
+                </div>
+            </div>
+            <div class="main-header">
+                <div class="logo">
+                    <a href="https://www.usol-v.com.vn/">
+                        <img src="./Images/HomePage/logo.jpg" alt="logo">
+                        <p>CHALLENGE FOR CHANGE</p>
+                    </a>
+                </div>
+                <ul class="tabs-menu">
+                    <i class="fa fa-bars" onclick="on()" aria-hidden="true"></i>
+                    <li class="item"><a href="#">Home</a></li>
+                    <li class="item">
+                        <a href="./Pages/HomePage/user.html">Thông tin tài khoản</a>
+                    </li>
+                    <li class="item">
+                        <a href="./Pages/HomePage/khaibao.html">Khai báo</a>
+                    </li>
+                    <li class="item">
+                        <a href="./Pages/HomePage/chithi.html">Chỉ thị</a>
+                    </li>
+                    <li id="anh">
+                        <a href="./Pages/HomePage/login.html">
+                            <img src='./Images/unnamed.jpg' alt="ảnh minh họa">
+                        </a>
+                    </li>
+                    <div class="nav__mobie" id="nav-bar-mobie">
+                        <a>
+                            <img onclick="handleLogin()" src='./Images/unnamed.jpg' alt="ảnh minh họa">
+                            <p id="handle-login">Vui long thuc hien dang nhap!</p>
+                            <i onclick="off()" class="fa fa-window-close" aria-hidden="true"></i>
+                        </a>
+                        <hr>
+                        <ul class="nav__mobie-items">
+                            <li class="item-link"><a href="#">Home</a></li>
+                            <li class="item-link"><a href="#">Thông tin tài khoản</a></li>
+                            <li class="item-link"><a href="#">Khai báo</a></li>
+                            <li class="item-link"><a href="#">Chỉ thị</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="slider">
+            <i class="fa fa-chevron-circle-left slider-prev" onclick="changeBannerPrev()"></i>
+            <ul class="slider-dots">
+                <li class="slider-dot-item active" id="0" onclick="changeImage1()"></li>
+                <li class="slider-dot-item" id="1" onclick="changeImage2()"></li>
+                <li class="slider-dot-item" id="2" onclick="changeImage3()"></li>
+                <!-- <li class="slider-dot-item" data-index="3"></li>
+                <li class="slider-dot-item" data-index="4"></li> -->
+            </ul>
+            <div class="slider-wrapper">
+                <div class="slider-main">
+                    <div class="slider-item">
+                        <img src="./Images/HomePage/banner.jpg" alt="banner" id="img" />
+                    </div>
+                </div>
+            </div>
+            <i class="fa fa-chevron-circle-right slider-next" aria-hidden="true" onclick="changeBanner()"></i>
+        </div>
+        <div class="main-content">
+            <div class="intro">
+                <p>Các chức năng chính của trang web</p>
+                <div class="function">
+                    <div>
+                        <div>
+
+                        </div>
+                        <p>Khai báo online</p>
+                    </div>
+                    <div>
+                        <div>
+
+                        </div>
+                        <p>Thông tin chỉ thị</p>
+                    </div>
+                    <div>
+                        <div>
+
+                        </div>
+                        <p>Chức năng khác</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map">
+                <p>Địa chỉ</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1178.5375423677858!2d105.79453278558036!3d21.04643300623317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab3ab9115d17%3A0x98ffd3fb30c4aac0!2sVietnam%20Usol%20Company!5e0!3m2!1svi!2s!4v1631245014543!5m2!1svi!2s"
+                    width="300" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="footerr">
+            <div class="main-footer">
+                <div class="office">
+                    <h2>Head office:</h2>
+                    <p>Add: 14th & 20th Floor, Hoa Binh Tower, 106 Hoang Quoc Viet</p>
+                    <p>Street, Cau Giay District, Hanoi, Vietnam</p>
+                    <p>Tel: +84-(0)24-3755 6500</p>
+                    <p>Fax: +84-(0)24-3755 6501</p>
+                </div>
+                <div class="branch">
+                    <h2>Ho Chi Minh Branch:</h2>
+                    <P>Add: Unit 8.9 & 8.10, 8th Floor, Etown 1 Building, 364 Cong Hoa</P>
+                    <P>St., Ward 13, Tan Binh Dist., HCMC</P>
+                    <P>Tel: +84-28-3810-8274</P>
+                    <P>Fax: +84-28-3810-8275</P>
+                </div>
+                <div class="browser-support">
+                    <h2>Browser tương thích</h2>
+                    <p><img src="./Images/HomePage/chrome.jpg">Version 12.0.742.53</p>
+                    <p><img src="./Images/HomePage/firefox.jpg">Version 58.0.1 trở lên</p>
+                    <p><img src="./Images/HomePage/explore.jpg">Version 11.0.9600.18617 trở lên</p>
+                    <p><img src="./Images/HomePage/adventures.jpg">Version 5.1.7 trở lên</p>
+                </div>
+            </div>
+            <div class="bottom-footer">
+                <p>&copy; USOL Vietnam Co.,Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var idx = 0;
+    var imgs = ['./Images/HomePage/banner.jpg', './Images/HomePage/vn.jpg', './Images/HomePage/banner.jpg'];
+    var count = 0;
+    changeBanner = function() {
+        document.getElementById('img').src = imgs[idx];
+        idx++;
+        if (idx == 3) {
+            idx = 0;
+        }
+    }
+    setInterval(changeBanner, 1000);
+    changeBannerPrev = function() {
+        // console.log("h");
+        document.getElementById('img').src = imgs[idx];
+        if (idx < 0) {
+            idx = 2;
+        }
+    }
+    changeImage1 = function() {
+        document.getElementById("img").src = imgs[0];
+        document.getElementById("0").style.backgroundColor = "white";
+        document.getElementById("1").style.backgroundColor = "gray";
+        document.getElementById("2").style.backgroundColor = "gray";
+    }
+    changeImage2 = function() {
+        document.getElementById("img").src = imgs[1];
+        document.getElementById("1").style.backgroundColor = "white";
+        document.getElementById("0").style.backgroundColor = "gray";
+        document.getElementById("2").style.backgroundColor = "gray";
+    }
+    changeImage3 = function() {
+        document.getElementById("img").src = imgs[2];
+        document.getElementById("2").style.backgroundColor = "white";
+        document.getElementById("1").style.backgroundColor = "gray";
+        document.getElementById("0").style.backgroundColor = "gray";
+    }
+    handleSearch = function() {
+        count++;
+        // console.log("Search");
+        if (count % 2 == 0) {
+            document.getElementById('search').style.display = 'none';
+            // document.getElementById('search').style.transition = '5s ease';
+        } else {
+            document.getElementById('search').style.display = 'block';
+            // document.getElementById('search').style.transition = '5s ease';
+        }
+        if (count > 10000) {
+            count = 0
+        }
+    }
+</script>
+<script src="Scripts/scriptCommon.js"></script>
+
+</html>

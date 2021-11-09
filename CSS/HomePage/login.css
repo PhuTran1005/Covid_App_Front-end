@@ -1,0 +1,163 @@
+/* body */
+
+.content {
+    width: 100%;
+}
+
+.login {
+    text-align: center;
+    position: relative;
+    width: 280px;
+    min-height: 690px;
+    top: 100px;
+    left: 40%;
+}
+
+input {
+    width: 100%;
+    border: 0;
+    border-radius: 20px;
+}
+
+#login {
+    border: 0;
+    border-radius: 20px;
+    width: 35%;
+    font-size: 15px;
+}
+
+i.fa.fa-send {
+    margin: 0;
+    margin-right: 5px;
+}
+
+input {
+    border-bottom: 2px solid #444;
+    padding: 12px 40px 12px 20px;
+}
+
+
+/* input,
+button,
+.group i,
+p,
+a {
+    font-weight: 600;
+} */
+
+.ref {
+    width: 0px;
+    height: 0px;
+    margin-left: 100px;
+    display: none;
+}
+
+.check {
+    display: flex;
+    font-size: 13px;
+    padding: 2px;
+}
+
+.check input {
+    width: 5%;
+    margin-right: 5px;
+}
+
+.group {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.group i {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.group input {
+    color: black;
+    background-color: #ddd
+}
+
+button {
+    padding: 12px;
+    background-image: linear-gradient(to right, #fb872b, #d9e021);
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button,
+button i {
+    color: #ffffff;
+}
+
+button i {
+    margin-right: 5px;
+}
+
+.btn-home {
+    transition: all 10s ease;
+}
+
+i.fa.fa-empire,
+a {
+    color: #ee7a01;
+    margin: 0;
+}
+
+i.fa.fa-empire {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+i.fa.fa-user {
+    color: rgba(0, 0, 0, 0.6)
+}
+
+i.fa.fa-lock {
+    color: rgba(0, 0, 0, 0.6)
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input:focus,
+input:focus::placeholder,
+input:focus+i {
+    color: #ee7a01;
+}
+
+input:focus,
+button:focus {
+    outline: 0;
+}
+
+.fs,
+.ss {
+    font-size: 13px;
+}
+
+.change-pass {
+    text-align: center;
+    position: relative;
+    width: 280px;
+    min-height: 690px;
+    top: 100px;
+    left: 40%;
+    /* display: none; */
+}
+
+#get-password {
+    border-radius: 40px;
+}
+
+span {
+    color: #ee7a01;
+    text-decoration: underline;
+    cursor: pointer;
+}

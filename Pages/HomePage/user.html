@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="../../CSS/HomePage/userStyle.css">
+    <link rel="stylesheet" href="../../CSS/HomePage/style.css">
+    <link media="all" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href='https://cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css'>
+    </style>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div class="overlay" id="nav-overlay">
+            <div>
+                <div class="top-header">
+                    <div class="language">
+                        <a href="#"><img src="../../Images/HomePage/jp.jpg" alt="japanese"></a>
+                        <a href="#"><img src="../../Images/HomePage/vn.jpg" alt="vietnamese"></a>
+                    </div>
+                    <div class="contact">
+                        <div>
+                            <i class="fa fa-phone"></i> <a href="tel:02437556500">Hotline: +84-(0)24-3755-6500</a>
+                        </div>
+                        <div>
+                            <i class="fa fa-envelope-o"></i> <a href="mailto:admin@usol-v.com.vn">Email: admin@usol-v.com.vn</a>
+                        </div>
+                        <div>
+                            <i class="fa fa-facebook-square"></i> <a href="https://www.facebook.com/UsolVietnam/">Facebook: USOL Vietnam</a>
+                        </div>
+                        <div class="search">
+                            <a href="#" onclick="handleSearch()"><i class="fa fa-search"></i></a>
+                            <input id="search" class="txt-search" placeholder="Nhap tu tim kiem...">
+                        </div>
+                    </div>
+                </div>
+                <div class="main-header">
+                    <div class="logo">
+                        <a href="https://www.usol-v.com.vn/"><img src="../../Images/HomePage/logo.jpg" alt="logo"></a>
+                        <p>CHALLENGE FOR CHANGE</p>
+                    </div>
+                    <ul class="tabs-menu">
+                        <i class="fa fa-bars" onclick="displayNavMobie()" aria-hidden="true"></i>
+                        <li class="item"><a href="./home.html">Home</a></li>
+                        <li class="item" style="background-color: red;">
+                            <a href="./user.html">Thông tin tài khoản</a>
+                        </li>
+                        <li class="item">
+                            <a href="./khaibao.html">Khai báo</a>
+                        </li>
+                        <li class="item">
+                            <a href="./chithi.html">Chỉ thị</a>
+                        </li>
+                        <li id="anh">
+                            <img onclick="handleLogin()" src='../../Images/unnamed.jpg' alt="ảnh minh họa">
+                            <p id="handle-login">
+                                <a href="../../index.html" style="color: red;">Logout</a>
+                            </p>
+                        </li>
+                        <div class="nav__mobie" id="nav-bar-mobie">
+                            <a>
+                                <img onclick="handleLogin()" src='../../Images/unnamed.jpg' alt="ảnh minh họa">
+                                <p id="handle-login">Vui long thuc hien dang nhap!</p>
+                                <i onclick="clickNavMobie()" class="fa fa-window-close" aria-hidden="true"></i>
+                            </a>
+                            <hr>
+                            <ul class="nav__mobie-items">
+                                <li class="item-link"><a href="#">Home</a></li>
+                                <li class="item-link"><a href="#">Thông tin tài khoản</a></li>
+                                <li class="item-link"><a href="#">Khai báo</a></li>
+                                <li class="item-link"><a href="#">Chỉ thị</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="back">
+                    <div class="dropdown">
+                        <img src="../../Images/unnamed.jpg" alt="avatar" class="userAva">
+                        <div class="show">
+                            <div class="add"><span v-on:click='handleClickInputFile'>Thêm ảnh đại diện</span></div>
+                            <form>
+                                <input type="file" style="display: none;" ref='fileInputAvatar'>
+                                <input type="submit" style="display: none;" ref='fileSubmitAvatar'>
+                            </form>
+                        </div>
+                    </div>
+                    <ul>
+                        <li class="option" style="border-left: 4px solid red;" onclick="clickOption('profile', this)">Profile</li>
+                        <li class="option" onclick="clickOption('account', this)">Account security</li>
+                        <li class="option" onclick="clickOption('create', this)">Create Accout</li>
+                        <li class="option" onclick="clickOption('list', this)">List Accout</li>
+                        <a href="../../index.html" id='log'>
+                            <li class="option" id="logOut">Log out</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="profile" id="t1">
+                    <h3>Public Profile</h3>
+                    <hr>
+                    <form>
+                        <label><b>Mã nhân viên</b></label><br>
+                        <input type="text" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;" v-bind:value="id" v-on:keyup="changeId($event)"><br><br>
+                        <label><b>Họ và tên</b></label><br>
+                        <input type="text" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;" v-bind:value="name" v-on:keyup='changeName($event)'><br><br>
+                        <label><b>Ngày sinh</b></label><br>
+                        <input type="date" style="height: 25px;border-radius: 5px; border-width: 1px;" v-bind:value="date" v-on:keyup='changeDate'><br><br>
+                        <label><b>Giới tính</b></label><br>
+                        <input type="text" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;" v-bind:value="sex" v-on:keyup='changeSex'><br><br>
+                        <label><b>Bộ phận</b></label><br>
+                        <input type="text" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;" v-bind:value="department" v-on:keyup='changeDepartment'><br><br>
+
+                    </form>
+                    <button v-on:click='handleClick()'>Update Profile</button>
+                </div>
+                <div class="account" id="t2">
+                    <h3>Change password</h3>
+                    <hr>
+                    <form>
+                        <label><b>Old Password</b></label><br>
+                        <input type="password" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;" id='oldPass' v-model='oldPassword'>
+                        <div class="eye">
+                            <img src='../../Images/eye1.png' onclick="passOn('oldPass', this)" class="opEye2">
+                            <img src="../../Images/eye2.jpg" style="display: none;" onclick="passOff('oldPass', this)" class="opEye2">
+                        </div>
+                        <label><b>New Password</b></label><br>
+                        <input type="password" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;" id='newPass' v-model='newPassword'>
+                        <div class="eye">
+                            <img src='../../Images/eye1.png' onclick="passOn('newPass', this)" class="opEye3">
+                            <img src="../../Images/eye2.jpg" style="display: none;" onclick="passOff('newPass', this)" class="opEye3">
+                        </div>
+                        <label><b>Confirm new password</b></label><br>
+                        <input type="password" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;" id="confirmPass" v-model='confirmPassword'>
+                        <div class="eye">
+                            <img src='../../Images/eye1.png' onclick="passOn('confirmPass', this)" class="opEye4">
+                            <img src="../../Images/eye2.jpg" style="display: none;" onclick="passOff('confirmPass', this)" class="opEye4">
+                        </div>
+                    </form>
+                    <button v-on:click='changePassClick'>Update Password</button>
+                </div>
+                <div class="createAcc" id="t3">
+                    <h3>New Member</h3>
+                    <hr>
+                    <form>
+                        <label><b>Mã nhân viên</b></label><br>
+                        <input type="text" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;" pattern="[0-9]{6}"><br><br>
+                        <label><b>Họ và tên</b></label><br>
+                        <input type="text" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;" required><br><br>
+                        <label><b>Mật khẩu</b></label><br>
+                        <input type="password" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;" id='createPass' required>
+                        <div class="eye">
+                            <img src='../../Images/eye1.png' onclick="passOn('createPass', this)" class="opEye1">
+                            <img src="../../Images/eye2.jpg" style="display: none;" onclick="passOff('createPass', this)" class="opEye1">
+                        </div>
+                        <label><b>Ngày sinh</b></label><br>
+                        <input type="date" style="height: 25px;border-radius: 5px; border-width: 1px;"><br><br>
+                        <label><b>Giới tính</b></label><br>
+                        <input type="text" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;"><br><br>
+                        <label><b>Bộ phận</b></label><br>
+                        <input type="text" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;" pattern="[0-9]{1}"><br><br>
+                        <label><b>Mã người tạo</b></label><br>
+                        <input type="text" style="width: 60%; height: 25px; border-radius: 5px; border-width: 1px;" pattern="[0-9]{6}"><br><br>
+                        <label><b>Thời gian tạo</b></label><br>
+                        <input type="date" style="height: 25px;border-radius: 5px; border-width: 1px;"><br><br>
+                    </form>
+                    <button>Create</button>
+                </div>
+                <div class="list" id="t4">
+                    <table id="table" style="width:90%">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Sex</th>
+                                <th>Date</th>
+                                <th>Department</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(data,index) in filteredUsers" v-bind:key="data.id" v-if="data.flag">
+                                <td>{{data.id}}</td>
+                                <td>{{data.name}}</td>
+                                <td>{{data.sex}}</td>
+                                <td>{{data.date}}</td>
+                                <td>Dev {{data.department}}</td>
+                                <td><img src='../../Images/delete.jpg' alt='delete' class="del" v-on:click='del(index)'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../Scripts/user.js"></script>
+<script src="../../Scripts/search.js"></script>
+<script src="../../Scripts/scriptCommon.js"></script>
+
+</html>

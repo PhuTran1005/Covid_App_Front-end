@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Trang chỉ thị</title>
+    <link rel="stylesheet" href="../../CSS/HomePage/chithi.css" />
+    <link rel="stylesheet" href="../../CSS/HomePage/style.css" />
+    <link media="all" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../ckeditor/ckeditor.js"></script>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div class="overlay" id="nav-overlay">
+            <div class="wrap-header">
+                <div class="top-header">
+                    <div class="language">
+                        <a href="#"><img src="../../Images/HomePage/jp.jpg" alt="japanese"></a>
+                        <a href="#"><img src="../../Images/HomePage/vn.jpg" alt="vietnamese"></a>
+                    </div>
+                    <div class="contact">
+                        <div>
+                            <i class="fa fa-phone"></i> <a href="tel:02437556500">Hotline: +84-(0)24-3755-6500</a>
+                        </div>
+                        <div>
+                            <i class="fa fa-envelope-o"></i> <a href="mailto:admin@usol-v.com.vn">Email: admin@usol-v.com.vn</a>
+                        </div>
+                        <div>
+                            <i class="fa fa-facebook-square"></i> <a href="https://www.facebook.com/UsolVietnam/">Facebook: USOL Vietnam</a>
+                        </div>
+                        <div class="search">
+                            <a href="#" onclick="handleSearch()"><i class="fa fa-search"></i></a>
+                            <input id="search" class="txt-search" placeholder="Nhap tu tim kiem...">
+                        </div>
+                    </div>
+                </div>
+                <div class="main-header">
+                    <div class="logo">
+                        <a href="https://www.usol-v.com.vn/"><img src="../../Images/HomePage/logo.jpg" alt="logo"></a>
+                        <p>CHALLENGE FOR CHANGE</p>
+                    </div>
+                    <ul class="tabs-menu">
+                        <i class="fa fa-bars" onclick="displayNavMobie()" aria-hidden="true"></i>
+                        <li class="item"><a href="./home.html">Home</a></li>
+                        <li class="item">
+                            <a href="./user.html">Thông tin tài khoản</a>
+                        </li>
+                        <li class="item">
+                            <a href="./khaibao.html">Khai báo</a>
+                        </li>
+                        <li class="item" style="background-color: red;">
+                            <a href="./chithi.html">Chỉ thị</a>
+                        </li>
+                        <li id="anh">
+                            <img onclick="handleLogin()" src='../../Images/unnamed.jpg' alt="ảnh minh họa">
+                            <p id="handle-login">
+                                <a href="../../index.html" style="color: red;">Logout</a>
+                            </p>
+                        </li>
+                        <div class="nav__mobie" id="nav-bar-mobie">
+                            <a>
+                                <img onclick="handleLogin()" src='../../Images/unnamed.jpg' alt="ảnh minh họa">
+                                <p id="handle-login">Vui long thuc hien dang nhap!</p>
+                                <i onclick="clickNavMobie()" class="fa fa-window-close" aria-hidden="true"></i>
+                            </a>
+                            <hr>
+                            <ul class="nav__mobie-items">
+                                <li class="item-link"><a href="#">Home</a></li>
+                                <li class="item-link"><a href="#">Thông tin tài khoản</a></li>
+                                <li class="item-link"><a href="#">Khai báo</a></li>
+                                <li class="item-link"><a href="#">Chỉ thị</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="content_ct">
+                    <h1>QUẢN LÝ CHỈ THỊ</h1>
+                    <ul>
+                        <li class="tabitem" style="border-left: 4px solid red;" onclick="changeList('create_ct', this)">Create</li>
+                        <li class="tabitem" onclick="changeList('update_ct', this)">Update</li>
+                        <li class="tabitem" onclick="changeList('refer_ct', this)">Refer</li>
+                        <li class="tabitem" onclick="changeList('delete_ct', this)">Delete</li>
+                    </ul>
+                </div>
+                <div class="create_ct" id="1">
+                    <h2>CREATE CHỈ THỊ</h2>
+                    <hr>
+                    <form>
+                        <label for="detail1"><b>Người tạo chỉ thị</b></label><br>
+                        <input type="text" name="detail1" minlength="1">
+                        <br><br>
+                        <label for="detail2"><b>Ngày ra chỉ thị</b></label><br>
+                        <input type="date"><br><br>
+                        <label detail3><b>Phương án chỉ thị công ty Việt Nam</b></label><br>
+                        <textarea class="ckeditor" name="detail3" rows="5"></textarea>
+                        <script>
+                            CKEDITOR.replace('detail3', {
+                                width: '65%',
+                                height: 75,
+                                removeButtons: 'PasterFromWord'
+                            });
+                        </script>
+                        <br><br>
+                        <label for="detail4"><b>Phương án chỉ thị công ty Nhật</b></label><br>
+                        <textarea class="ckeditor" name="detail4" rows="5"></textarea>
+                        <script>
+                            CKEDITOR.replace('detail4', {
+                                width: '65%',
+                                height: 75,
+                                removeButtons: 'PasterFromWord'
+                            });
+                        </script>
+                        <br><br>
+                        <label for="detail5"><b>Phương án cho ngày tiếp theo</b></label><br>
+                        <textarea class="ckeditor" name="detail5" rows="5"></textarea>
+                        <script>
+                            CKEDITOR.replace('detail5', {
+                                width: '65%',
+                                height: 75,
+                                removeButtons: 'PasterFromWord'
+                            });
+                        </script>
+                        <br><br>
+                    </form>
+                    <button type="submit">Create</button>
+                </div>
+
+                <div class="update_ct" id="2">
+                    <h2>UPDATE CHỈ THỊ</h2>
+                    <hr>
+                    <form>
+                        <label for="detail21"><b>Người sửa chỉ thị</b></label><br>
+                        <input type="text" name="detail21">
+                        <br><br>
+                        <label for="detail22"><b>Ngày sửa chỉ thị</b></label><br>
+                        <input type="date" name="detail22"><br><br>
+                        <label for="detail23"><b>Phương án chỉ thị mới công ty Việt Nam</b></label><br>
+                        <textarea class="ckeditor" name="detail23" rows="5"></textarea>
+                        <script>
+                            CKEDITOR.replace('detail23', {
+                                width: '65%',
+                                height: 75,
+                                removeButtons: 'PasterFromWord'
+                            });
+                        </script>
+                        <br><br>
+                        <label for="detail24"><b>Phương án chỉ thị mới công ty Nhật</b></label><br>
+                        <textarea class="ckeditor" name="detail24" rows="5"></textarea>
+                        <script>
+                            CKEDITOR.replace('detail24', {
+                                width: '65%',
+                                height: 75,
+                                removeButtons: 'PasterFromWord'
+                            });
+                        </script>
+                        <br><br>
+                        <label for="detail25"><b>Phương án cho ngày tiếp theo</b></label><br>
+                        <textarea class="ckeditor" name="detail25" rows="5"></textarea>
+                        <script>
+                            CKEDITOR.replace('detail25', {
+                                width: '65%',
+                                height: 75,
+                                removeButtons: 'PasterFromWord'
+                            });
+                        </script>
+                        <br><br>
+                    </form>
+                    <button type="submit">Update</button>
+                </div>
+
+                <div class="refer_ct" id="3">
+                    <h2>REFER</h2>
+                    <hr>
+                    <form>
+                        <label><b>Refer thông tin</b></label><br>
+                        <input type="text">
+                        <br><br>
+                    </form>
+                    <button>Refer</button>
+                </div>
+
+                <div class="delete_ct" id="4">
+                    <h2>XÓA CHỈ THỊ</h2>
+                    <hr>
+                    <form>
+                        <label><b>Người xóa chỉ thị</b></label><br>
+                        <input type="text">
+                        <br><br>
+                    </form>
+                    <button>Xóa</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="../../Scripts/chithi.js"></script>
+    <script src="../../Scripts/search.js"></script>
+    <script src="../../Scripts/scriptCommon.js"></script>
+</body>
+
+</html>
